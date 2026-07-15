@@ -13,21 +13,20 @@ import java.util.Objects;
 
 @Service
 public class OrchestratorService {
-    private static final Logger log = LoggerFactory.getLogger(OrchestratorService.class);
-    
-    private final WebClient webClient;
+        private static final Logger log = LoggerFactory.getLogger(OrchestratorService.class);   
+        private final WebClient webClient;
 
-    public OrchestratorService(
-            WebClient.Builder webClientBuilder,
-            @Value("${orchestrator.mock-base-url:http://localhost:8080}") String mockBaseUrl) {
+        public OrchestratorService(
+                WebClient.Builder webClientBuilder,
+                @Value("${orchestrator.mock-base-url:http://localhost:8080}") String mockBaseUrl) {
         this.webClient = webClientBuilder.baseUrl(mockBaseUrl).build();
-    }
+        }
 
     /**
      * Menjalankan Step 1 dan Step 2 secara berurutan lalu menyimpan responsnya
      * dalam satu objek yang dapat dipakai oleh langkah selanjutnya.
      */
-    public SharedDto executeStep1And2() {
+        public SharedDto executeStep1And2() {
         MockOneResponse mock1Response = Objects.requireNonNull(
                 webClient.get()
                         .uri("/mock/mock1")
@@ -47,7 +46,7 @@ public class OrchestratorService {
         log.info("Step 2: Berhasil memanggil mock 2");
 
         return new SharedDto(mock1Response, mock2Response);
-    }
+        }
 }
 // TUGAS HARTA
 // Menggunakan WebClient dari Anggota 1 untuk memanggil /mock1 dan /mock2. 
@@ -60,7 +59,6 @@ public class OrchestratorService {
 // Sama seperti sebelumnya, hasilnya harus disimpan dan diberikan log yang jelas
 
 //TUGAS ANDANG
-// Ini bagian yang paling menantang. 
 // Anggota 4 menyuntikkan logika penanganan error (Saga). 
 // Dia harus membuat skenario: Bagaimana jika mock 1 sukses, tapi mock 2 gagal? 
 // Anggota 4 harus membuat fungsi kompensasi (compensating transaction) 

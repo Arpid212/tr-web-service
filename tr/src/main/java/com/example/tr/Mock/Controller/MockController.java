@@ -14,20 +14,37 @@ public class MockController {
 
     @GetMapping("/mock1")
     public ResponseEntity<MockOneResponse> getMock1() {
-        MockOneResponse response = new MockOneResponse("M1-001", "SUCCESS", "Validasi Pengguna Berhasil");
+        MockOneResponse response = new MockOneResponse(
+            "ORD-1234", 
+            "SUCCESS", 
+            "Pesanan diterima, stok warung dikurangi", 
+            "Paket Ayam Geprek + Es Teh", 
+            1
+        );
         return ResponseEntity.ok(response);
     }
 
     @GetMapping("/mock2")
     public ResponseEntity<MockTwoResponse> getMock2() {
-        MockTwoResponse response = new MockTwoResponse("M2-001", "SUCCESS", "Cek Saldo Berhasil");
+        MockTwoResponse response = new MockTwoResponse(
+            "TRX-1232", 
+            "SUCCESS", 
+            "Saldo berhasil dipotong", 
+            15000.0, 
+            "E-Wallet Kampus"
+        );
         return ResponseEntity.ok(response);
     }
 
     @GetMapping("/mock3")
     public ResponseEntity<MockThreeResponse> getMock3() {
-        MockThreeResponse response = new MockThreeResponse("M3-001", "SUCCESS", "Pengiriman Barang Diproses");
+        MockThreeResponse response = new MockThreeResponse(
+            "DEL-1231", 
+            "SUCCESS", 
+            "Driver ditemukan, pesanan siap diantar", 
+            "Pak Budi (Motor Merah)", 
+            "10 Menit"
+        );
         return ResponseEntity.ok(response);
     }
 }
-//Arvid

@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 public class MockTwoResponse {
-
-    private String id;
+    private String transactionId;
     private String status;
-    private String deskripsi;
-
+    private String message;
+    private double amountDeducted;
+    private String paymentMethod;
 }

@@ -8,8 +8,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MockOneResponse {
-    private String id;
+    private String orderId;
     private String status;
-    private String deskripsi;
+    private String message;
+    private String itemName;
+    private int quantity;
 }
 // Arvid semua difolder mockup

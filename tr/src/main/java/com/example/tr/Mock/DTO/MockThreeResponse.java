@@ -8,7 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MockThreeResponse {
-    private String id;
+    private String deliveryId;
     private String status;
-    private String deskripsi;
+    private String message;
+    private String driverName;
+    private String estimatedTime;
 }
