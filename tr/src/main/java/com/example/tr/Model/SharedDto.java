@@ -2,6 +2,7 @@ package com.example.tr.Model;
 
 import com.example.tr.Mock.DTO.MockOneResponse;
 import com.example.tr.Mock.DTO.MockTwoResponse;
+import com.example.tr.Mock.DTO.MockThreeResponse;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,6 +16,7 @@ import lombok.NoArgsConstructor;
 public class SharedDto {
     private MockOneResponse mock1Response;
     private MockTwoResponse mock2Response;
+    private MockThreeResponse mock3Response;
 }
 // Ini adalah wadah (struktur data/objek) yang akan digunakan 
 // oleh Harta, Christival, dan Yefta untuk saling mengoper 

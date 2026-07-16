@@ -2,6 +2,7 @@ package com.example.tr.Service;
 
 import com.example.tr.Mock.DTO.MockOneResponse;
 import com.example.tr.Mock.DTO.MockTwoResponse;
+import com.example.tr.Mock.DTO.MockThreeResponse;
 import com.example.tr.Model.SharedDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,7 +46,16 @@ public class OrchestratorService {
                 "Respons dari mock2 tidak boleh kosong");
         log.info("Step 2: Berhasil memanggil mock 2");
 
-        return new SharedDto(mock1Response, mock2Response);
+        MockThreeResponse mock3Response = Objects.requireNonNull(
+                webClient.get()
+                        .uri("/mock/mock3")
+                        .retrieve()
+                        .bodyToMono(MockThreeResponse.class)
+                        .block(),
+                "Respons dari mock3 tidak boleh kosong");
+        log.info("Step 3: Berhasil memanggil mock 3");
+
+        return new SharedDto(mock1Response, mock2Response, mock3Response);
         }
 }
 // TUGAS HARTA

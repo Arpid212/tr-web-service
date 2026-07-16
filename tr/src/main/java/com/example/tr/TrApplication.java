@@ -25,6 +25,7 @@ public class TrApplication {
                 // Nampilin hasil
                 System.out.println("Data Mock 1: " + result.getMock1Response().getItemName());
                 System.out.println("Data Mock 2: " + result.getMock2Response().getAmountDeducted());
+                System.out.println("Data Mock 3: " + result.getMock3Response().getDriverName());
                 System.out.println("========== TEST BERHASIL ==========\n");
             } catch (Exception e) {
                 System.err.println("Terjadi Error: " + e.getMessage());
